@@ -1,0 +1,18 @@
+Q7.  Write a PL/SQL Program to display table contents from table from user input
+
+declare
+x emp.empno%type;
+y emp%rowtype;
+begin
+x:=&x;
+select * into y from emp where empno=x;
+dbms_output.put_line(y.empno || '  ' || y.ename || '  ' || y.designation || '  ' || y.salary || '  ' || y.deptno);
+end;
+/
+
+Enter value for x: 7900
+old   5: x:=&x;
+new   5: x:=7900;
+7900  JAMES  CLERK  1050  30
+
+PL/SQL procedure successfully completed.

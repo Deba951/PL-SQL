@@ -1,0 +1,24 @@
+Q3.  Write a PL/SQL Program to find the factorial of a number using FOR Loop
+
+declare
+n number;
+fact number;
+begin
+n:=&n;
+fact:=1;
+for i in 1..n
+	loop
+		fact:=fact*i;
+	end loop;
+dbms_output.put_line('The Factorial is ' || fact);
+end;
+/
+
+Enter value for n: 5
+old   5: n:=&n;
+new   5: n:=5;
+The Factorial is 120
+
+PL/SQL procedure successfully completed.
+
+Commit complete.

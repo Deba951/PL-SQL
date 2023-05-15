@@ -1,0 +1,52 @@
+Q4.  Write a PL/SQL Program to display Fibonacci series upto 20000 using While Loop
+
+declare
+a number;
+b number;
+c number;
+begin
+a:=0;
+b:=1;
+dbms_output.put_line(a);
+dbms_output.put_line(b);
+c:=a+b;
+while c<20000
+	loop
+		dbms_output.put_line(c);
+		a:=b;
+		b:=c;
+		c:=a+b;
+	end loop;
+end;
+/
+
+
+
+
+
+
+0
+1
+1
+2
+3
+5
+8
+13
+21
+34
+55
+89
+144
+233
+377
+610
+987
+1597
+2584
+4181
+6765
+10946
+17711
+
+PL/SQL procedure successfully completed.

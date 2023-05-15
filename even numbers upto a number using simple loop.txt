@@ -1,0 +1,26 @@
+Q2.  Write a PL/SQL Program to dispay all then even numbers upto a number using simple loop
+
+declare
+n number;
+i number;
+begin
+n:=&n;
+i:=1;
+Loop
+	if i mod 2 = 0 then
+		dbms_output.put_line(i);
+	end if;
+	i:=i+1;
+exit when i>n;
+end Loop;
+end;
+/
+
+Enter value for n: 10
+old   5: n:=&n;
+new   5: n:=10;
+2
+4
+6
+8
+10

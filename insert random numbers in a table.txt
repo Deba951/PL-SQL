@@ -1,0 +1,42 @@
+Q5.  Write a PL/SQL Program to insert random numbers in a table random_num(rand_no number(20))
+
+SQL> CREATE TABLE random_num(rand_no number(20));
+
+Table created.
+
+declare 
+max_number number:=100;
+begin
+for i in 1..10
+	loop
+		insert into random_num(rand_no)
+		values (Floor(dbms_random.value(1,max_number)));
+	end loop;
+dbms_output.put_line('Random numbers inserted succesfully');
+end;
+/		
+
+
+
+
+Random numbers inserted succesfully
+
+PL/SQL procedure successfully completed.
+
+Commit complete.
+SQL> select * from random_num;
+
+   RAND_NO
+----------
+        64
+        53
+        34
+        82
+         2
+        80
+        58
+        33
+        23
+        37
+
+10 rows selected.

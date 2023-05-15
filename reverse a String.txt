@@ -1,0 +1,22 @@
+Q11.  Write PL/SQL Code to reverse a String
+
+declare
+str varchar2(100);
+rev varchar2(100);
+begin
+str:='&str';
+rev:='';
+for i in reverse 1..length(str)
+	loop
+		rev:=rev||substr(str,i,1);
+	end loop;
+dbms_output.put_line(rev);
+end;
+/
+
+Enter value for str: india
+old   5: str:='&str';
+new   5: str:='india';
+aidni
+
+PL/SQL procedure successfully completed.

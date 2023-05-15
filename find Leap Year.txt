@@ -1,0 +1,14 @@
+Q12.  Write PL/SQL Code to find Leap Year
+
+
+declare 
+y number(4);
+begin
+y:='&y';
+if (y mod 4 = 0 and y mod 100 != 0) or y mod 400 = 0 then
+	dbms_output.put_line('Leap Year');
+else
+	dbms_output.put_line('Not Leap Year');
+end if;
+end;
+/

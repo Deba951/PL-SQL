@@ -1,0 +1,48 @@
+10.  Write a PL/SQL Code to Calculate the salary from basic Pay
+
+Assuming 10% DA 20% HRA 5% TA and 10% PF 
+
+DECLARE
+  basic_pay NUMBER(10,2) := &basic_pay; 
+  da_pct NUMBER(3,2) := 0.1; 
+  hra_pct NUMBER(3,2) := 0.2; 
+  ta_pct NUMBER(3,2) := 0.05; 
+  da_amt NUMBER(10,2);
+  hra_amt NUMBER(10,2);
+  ta_amt NUMBER(10,2);
+  gross_pay NUMBER(10,2);
+  salary NUMBER(10,2);
+BEGIN
+  da_amt := basic_pay * da_pct;
+  hra_amt := basic_pay * hra_pct;
+  ta_amt := basic_pay * ta_pct;
+  
+  gross_pay := basic_pay + da_amt + hra_amt + ta_amt;
+  
+  salary := gross_pay * 0.9;
+  
+  -- display the results
+  DBMS_OUTPUT.PUT_LINE('Basic Pay: ' || basic_pay);
+  DBMS_OUTPUT.PUT_LINE('DA: ' || da_amt);
+  DBMS_OUTPUT.PUT_LINE('HRA: ' || hra_amt);
+  DBMS_OUTPUT.PUT_LINE('TA: ' || ta_amt);
+  DBMS_OUTPUT.PUT_LINE('Gross Pay: ' || gross_pay);
+  DBMS_OUTPUT.PUT_LINE('PF: ' || gross_pay * 0.1);
+  DBMS_OUTPUT.PUT_LINE('Salary: ' || salary);
+END;
+/
+
+Enter value for basic_pay: 12000
+old   2:   basic_pay NUMBER(10,2) := &basic_pay;
+new   2:   basic_pay NUMBER(10,2) := 12000;
+Basic Pay: 12000
+DA: 1200
+HRA: 2400
+TA: 600
+Gross Pay: 16200
+PF: 1620
+Salary: 14580
+
+PL/SQL procedure successfully completed.
+
+Commit complete.
